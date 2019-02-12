@@ -15,7 +15,7 @@ class Character
     // just need to find a way to tell it what variable i passed it, maybe using pointer/reference magic
     void displayLevel()
     {
-        std::cout << name << "is level " << level << std::endl;
+        std::cout <<  "Your current level is: " << level << std::endl;
     }
 
     void displayAttributes()
@@ -26,7 +26,7 @@ class Character
     void displayExperience()
     {
         std::cout << "Your current experience is: " << currentExperience << std::endl;
-        std::cout << "You need " << experienceToNextLevel - currentExperience << " to level up" << std::endl;
+        std::cout << "You need " << experienceToNextLevel - currentExperience << " more experience to level up" << std::endl;
     }
 
     void addDex(int amount)
@@ -41,6 +41,8 @@ class Character
     
     void addXp(int amount)
     {
+        std::cout << "You have gained " << amount << " xp" << std::endl;
+
         if (currentExperience + amount > experienceToNextLevel)
         {
             levelUp((currentExperience + amount) - experienceToNextLevel);
@@ -50,29 +52,46 @@ class Character
             currentExperience += amount;
         }
     }
+    
+    void addStat(int number)
+    {
+        
+        if (number == 1)
+        {
+            addDex(1);
+        }
+        else if (number == 2)
+        {
+            addStrength(1);
+        }
+    }
+
+    void checkLeftOver(int leftOver)
+    {
+       if (leftOver > experienceToNextLevel)
+       {
+            levelUp(leftOver - experienceToNextLevel);
+       }
+       else
+       {
+            currentExperience = leftOver;
+       }
+    }
 
     void levelUp(int leftOver)
     {
+        //Tune this down or up to make experience gain faster or slower
+        experienceToNextLevel = (experienceToNextLevel + (experienceToNextLevel / 100 * 10));
+
         int whatToLevel;
         level += 1;
 
         std::cout << "Congrats " << name << ". You are now level " << level << std::endl;
         std::cout << "Type 1 to add to dexterity, type 2 to add to strength." << std::endl;
         std::cin >> whatToLevel;
-
-        if (whatToLevel == 1)
-        {
-            addDex(1);
-        }
-        else if (whatToLevel == 2)
-        {
-            addStrength(1);
-        }
-
-        currentExperience = leftOver;
-
-        //Tune this down or up to make experience gain faster or slower
-        experienceToNextLevel = experienceToNextLevel * (experienceToNextLevel / 100 * 10); 
+        
+        addStat(whatToLevel);
+        checkLeftOver(leftOver);
     }
     
     // Parametrized Constructor

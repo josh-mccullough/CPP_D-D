@@ -1,20 +1,29 @@
 #include <iostream>
 #include <string>
 
-#include "rollMechanics.cpp"
+#include "../gameMechanics/rollMechanics.cpp"
+#include "../characterOptions/initCharacter.cpp"
 
 
 void welcome()
 {
     std::string name;
-    int age;
 
     std::cout << "Welcome to your adventure, what is  your name?  " << std::endl;
     std::getline( std::cin, name);
 
-    std::cout << "Thank you " << name << ". What is your age?" << std::endl;
-    std::cin >> age;
     std::cout << "Perfect, let us get started" << std::endl;
+    Character  newCharacter(name, 20, 18);
+    newCharacter.displayLevel();
+    newCharacter.displayAttributes();
+    newCharacter.displayExperience();
+
+    newCharacter.addXp(1000);
+    
+    newCharacter.displayLevel();
+    newCharacter.displayAttributes();
+    newCharacter.displayExperience();
+    
 }
 
 

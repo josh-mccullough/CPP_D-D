@@ -2,7 +2,7 @@
 #include <string>
 
 #include "../gameMechanics/rollMechanics.cpp"
-#include "../characterOptions/initCharacter.cpp"
+#include "../characterOptions/Character.h"
 
 
 void welcome()
@@ -13,16 +13,15 @@ void welcome()
     std::getline( std::cin, name);
 
     std::cout << "Perfect, let us get started" << std::endl;
-    Character  newCharacter(name, 20, 18);
-    newCharacter.displayLevel();
-    newCharacter.displayAttributes();
-    newCharacter.displayExperience();
-
-    newCharacter.addXp(1000);
+    Character* newCharacter = Character(name, 20, 18);
+    newCharacter->displayLevel();
+    newCharacter->displayAttributes();
+    newCharacter->displayExperience();
+    newCharacter->addXp(1000);
     
-    newCharacter.displayLevel();
-    newCharacter.displayAttributes();
-    newCharacter.displayExperience();
+    newCharacter->displayLevel();
+    newCharacter->displayAttributes();
+    newCharacter->displayExperience();
     
 }
 

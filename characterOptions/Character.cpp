@@ -1,45 +1,34 @@
-#include <iostream>
-
-class Character
-{
-    public:
-        int health;
-        std::string name;
-        int strength;
-        int dexterity;
-        int currentExperience;
-        int experienceToNextLevel;
-        int level;
+#include "Character.h"
 
     // TODO probably make this more efficient, i think the adding functions could be one i guess
     // just need to find a way to tell it what variable i passed it, maybe using pointer/reference magic
-    void displayLevel()
+    void Character::displayLevel()
     {
         std::cout <<  "Your current level is: " << level << std::endl;
     }
 
-    void displayAttributes()
+    void Character::displayAttributes()
     {
         std::cout << "Strength: " << strength << " | Dexterity: " << dexterity << std::endl;
     }
 
-    void displayExperience()
+    void Character::displayExperience()
     {
         std::cout << "Your current experience is: " << currentExperience << std::endl;
         std::cout << "You need " << experienceToNextLevel - currentExperience << " more experience to level up" << std::endl;
     }
 
-    void addDex(int amount)
+    void Character::addDex(int amount)
     {
         dexterity += amount;
     }
     
-    void addStrength(int amount)
+    void Character::addStrength(int amount)
     {
         strength += amount;
     }
     
-    void addXp(int amount)
+    void Character::addXp(int amount)
     {
         std::cout << "You have gained " << amount << " xp" << std::endl;
 
@@ -53,7 +42,7 @@ class Character
         }
     }
     
-    void addStat(int number)
+    void Character::addStat(int number)
     {
         
         if (number == 1)
@@ -66,7 +55,7 @@ class Character
         }
     }
 
-    void checkLeftOver(int leftOver)
+    void Character::checkLeftOver(int leftOver)
     {
        if (leftOver > experienceToNextLevel)
        {
@@ -78,7 +67,7 @@ class Character
        }
     }
 
-    void levelUp(int leftOver)
+    void Character::levelUp(int leftOver)
     {
         //Tune this down or up to make experience gain faster or slower
         experienceToNextLevel = (experienceToNextLevel + (experienceToNextLevel / 100 * 10));
@@ -96,7 +85,7 @@ class Character
     
     // Parametrized Constructor
     // I cant see the point in a default constructor due to this being an 'rpg'
-    Character(std::string name, int dex, int str)
+    Character::Character(std::string name, int dex, int str)
     {
         name = name;
         dexterity = dex;
@@ -106,4 +95,3 @@ class Character
         level = 1;
         health = 500;
     }
-};

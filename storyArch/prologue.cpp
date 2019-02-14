@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-#include "../gameMechanics/rollMechanics.cpp"
+#include "../gameMechanics/rollMechanics.h"
 #include "../characterOptions/Character.h"
 
 
@@ -12,8 +12,10 @@ void welcome()
     std::cout << "Welcome to your adventure, what is  your name?  " << std::endl;
     std::getline( std::cin, name);
 
-    std::cout << "Perfect, let us get started" << std::endl;
-    Character* newCharacter = Character(name, 20, 18);
+    //Creating a pointer for our character 
+    //we can now access this character everyone in our program
+    Character* newCharacter = new Character(name, 20, 18);
+
     newCharacter->displayLevel();
     newCharacter->displayAttributes();
     newCharacter->displayExperience();
@@ -21,8 +23,7 @@ void welcome()
     
     newCharacter->displayLevel();
     newCharacter->displayAttributes();
-    newCharacter->displayExperience();
-    
+    newCharacter->displayExperience(); 
 }
 
 

@@ -1,10 +1,13 @@
 # CPP_D-D
-
-To build:\n
-  cd build\n
-  cmake ..\n
-  make\n
   
-To run:\n
-  cd build\n
-  ./run\n
+Welcome to the worst adventure of your life.  
+  
+
+# To build:  
+  cd build  
+  cmake ..  
+  make  
+  
+# To run:  
+  cd build  
+  ./run  

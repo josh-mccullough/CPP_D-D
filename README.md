@@ -1,10 +1,10 @@
 # CPP_D-D
 
-To build:
-  cd build
-  cmake ..
-  make
+To build:\n
+  cd build\n
+  cmake ..\n
+  make\n
   
-To run:
-  cd build
-  ./run
+To run:\n
+  cd build\n
+  ./run\n

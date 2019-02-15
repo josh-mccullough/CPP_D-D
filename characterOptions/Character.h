@@ -11,15 +11,21 @@ class Character
         int experienceToNextLevel;
         int level;
 
-        void displayLevel();
+        inline int getLevel(){return level;}
 
-        void displayAttributes();
+        inline int getExperience(){return currentExperience;}
 
-        void displayExperience();
+        inline int getHealth(){return health;}
 
-        void addDex(int amount);
+        inline void addDex(int amount){dexterity += amount;}
         
-        void addStrength(int amount);
+        inline void addStrength(int amount){strength += amount;}
+
+        inline void addHealth(int amount){health += amount;}
+
+        inline void loseHealth(int amount){health -= amount;}
+        
+        void displayAttributes();
         
         void addXp(int amount);
         

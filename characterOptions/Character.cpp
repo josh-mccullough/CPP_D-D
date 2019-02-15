@@ -1,33 +1,11 @@
 #include "Character.h"
 
-    // TODO probably make this more efficient, i think the adding functions could be one i guess
-    // just need to find a way to tell it what variable i passed it, maybe using pointer/reference magic
-    void Character::displayLevel()
-    {
-        std::cout <<  "Your current level is: " << level << std::endl;
-    }
 
     void Character::displayAttributes()
     {
         std::cout << "Strength: " << strength << " | Dexterity: " << dexterity << std::endl;
     }
 
-    void Character::displayExperience()
-    {
-        std::cout << "Your current experience is: " << currentExperience << std::endl;
-        std::cout << "You need " << experienceToNextLevel - currentExperience << " more experience to level up" << std::endl;
-    }
-
-    void Character::addDex(int amount)
-    {
-        dexterity += amount;
-    }
-    
-    void Character::addStrength(int amount)
-    {
-        strength += amount;
-    }
-    
     void Character::addXp(int amount)
     {
         std::cout << "You have gained " << amount << " xp" << std::endl;

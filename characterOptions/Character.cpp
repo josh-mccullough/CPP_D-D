@@ -119,8 +119,8 @@
         skillMap["SURVIVAL"] = 0;
 
         name = name;
-		classG = classG;
-		armourRating = armourRating;
+        classG = classG;
+        armourRating = armourRating;
         experienceToNextLevel = 100;
         currentExperience = 0;
         level = 1;

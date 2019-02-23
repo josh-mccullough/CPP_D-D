@@ -12,14 +12,12 @@ int startGame()
     std::cout << "Welcome to your adventure, what is  your name?  " << std::endl;
     std::getline( std::cin, name);
 
-    //Creating a pointer for our character 
-    //we can now access this character everyone in our program
-    Character* newCharacter = new Character(name, 20, 18);
+    Character * newCharacter = new Character(name, "elf", 200);
 
     while(newCharacter->health != 0)
     {
         std::cout << "Your health = " << newCharacter->getHealth() << std::endl;
-        newCharacter->loseHealth(100);
+
 
         //chapter1
         //chapter2
@@ -39,8 +37,6 @@ int startGame()
     {
         return 0;
     }
-
-
 }
 
 int main()

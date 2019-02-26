@@ -13,7 +13,9 @@ int startGame()
     std::getline( std::cin, name);
 
     Character * newCharacter = new Character(name, "elf", 200);
+    return 0;
 
+    /*
     while(newCharacter->health != 0)
     {
         std::cout << "Your health = " << newCharacter->getHealth() << std::endl;
@@ -37,6 +39,7 @@ int startGame()
     {
         return 0;
     }
+    */
 }
 
 int main()

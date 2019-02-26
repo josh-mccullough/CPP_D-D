@@ -1,22 +1,40 @@
 #include <iostream>
-#include <iterator>
-#include <cctype>
-#include <algorithm>
-#include <map>
 
 class Character
 {
-    public:
-        std::map<std::string, int>::iterator it;
-
+    private:
         int health;
         std::string name;
 
         // Attributes
-        std::map<std::string, int> attributeMap;
+        void displayAttributes(); 
+        int strength;
+        int dexterity;
+        int constitution; 
+        int intelligence;
+        int wisdom;
+        int charisma;
 
         // skills
-        std::map<std::string, int> skillMap;
+        void displaySkills();
+        int acrobatics;
+        int animalHandling;
+        int arcana;
+        int athletics;
+        int deception;
+        int history;
+        int insight;
+        int intimidation;
+        int investigation;
+        int medicine;
+        int nature;
+        int perception;
+        int performance;
+        int persusion;
+        int religion;
+        int sleightOfHand;
+        int stealth;
+        int survival;
 
         std::string race;
         std::string classG;
@@ -26,6 +44,7 @@ class Character
         int experienceToNextLevel;
         int level;
 
+    public:
         inline int getLevel(){return level;}
         inline int getExperience(){return currentExperience;}
         void addXp(int amount);
@@ -36,11 +55,5 @@ class Character
         inline void addHealth(int amount){health += amount;}
         inline void loseHealth(int amount){health -= amount;}
         
-        void displayAttributes(); 
-        void addAttribute(std::string attribute, int amount);
-
-        void displaySkills();
-        void addSkill(std::string skill, int amount);
-
         Character(std::string name, std::string classG, int armourRating);
 };

@@ -1,5 +1,5 @@
 #include "Character.h"
-
+    
     void Character::displayAttributes ()
     {
         //display i guess

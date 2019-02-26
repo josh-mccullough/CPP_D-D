@@ -15,9 +15,18 @@ int startGame()
 
     Character * newCharacter = new Character(name, "elf", 200);
 
-    while(newCharacter->getHealth() != 0)
+    while(newCharacter->isAlive())
     {
-        chapter1 ();
+        switch (newCharacter.getCurrentChapter())
+        {
+            case CHAPTER_1:
+                chapter1(c);
+                break;
+
+            default;
+            break;
+        }
+
         //chapter2
         //chapter3 etc.
         //manage all progress through the game from here? 

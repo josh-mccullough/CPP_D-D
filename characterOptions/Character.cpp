@@ -24,7 +24,6 @@
         }
     }
     
-
     void Character::checkLeftOver(int leftOver)
     {
        if (leftOver > experienceToNextLevel)

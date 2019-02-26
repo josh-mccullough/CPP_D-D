@@ -13,13 +13,11 @@ int startGame()
     std::getline( std::cin, name);
 
     Character * newCharacter = new Character(name, "elf", 200);
-    return 0;
 
-    /*
-    while(newCharacter->health != 0)
+    while(newCharacter->getHealth() != 0)
     {
         std::cout << "Your health = " << newCharacter->getHealth() << std::endl;
-
+        newCharacter->loseHealth(50);
 
         //chapter1
         //chapter2
@@ -28,7 +26,7 @@ int startGame()
     
     }
 
-    std::cout << "You have died, would you like to 1. Restart or 2. Quit?" << std::endl;
+    std::cout << "You have died, would you like to 1.Restart or 2.Quit?" << std::endl;
     std::cin >> choice;
 
     if (choice == 1)
@@ -39,7 +37,7 @@ int startGame()
     {
         return 0;
     }
-    */
+   
 }
 
 int main()

@@ -1,22 +1,22 @@
 #include "Character.h"
 
-    void Character::displayAttributes()
+    void Character::displayAttributes ()
     {
         //display i guess
     }
 
-    void Character::displaySkills()
+    void Character::displaySkills ()
     {
         // yes
     }
 
-    void Character::addXp(int amount)
+    void Character::addXp (int amount)
     {
         std::cout << "You have gained " << amount << " xp" << std::endl;
 
         if (currentExperience + amount > experienceToNextLevel)
         {
-            levelUp((currentExperience + amount) - experienceToNextLevel);
+            levelUp ((currentExperience + amount) - experienceToNextLevel);
         }
         else
         {
@@ -24,11 +24,11 @@
         }
     }
     
-    void Character::checkLeftOver(int leftOver)
+    void Character::checkLeftOver (int leftOver)
     {
        if (leftOver > experienceToNextLevel)
        {
-            levelUp(leftOver - experienceToNextLevel);
+            levelUp (leftOver - experienceToNextLevel);
        }
        else
        {
@@ -36,25 +36,11 @@
        }
     }
 
-    void Character::levelUp(int leftOver)
+    void Character::levelUp (int leftOver)
     {
         //Tune this down or up to make experience gain faster or slower
         experienceToNextLevel = (experienceToNextLevel + (experienceToNextLevel / 100 * 10));
         level += 1;
         std::cout << "Congrats " << name << ". You are now level " << level << std::endl;
-
-        checkLeftOver(leftOver);
-    }
-    
-    // Parametrized Constructor
-    // I cant see the point in a default constructor due to this being an 'rpg'
-    Character::Character(std::string name, std::string classG, int armourRating)
-    {
-        name = name;
-        classG = classG;
-        armourRating = armourRating;
-        experienceToNextLevel = 100;
-        currentExperience = 0;
-        level = 1;
-        health = 500;
+        checkLeftOver (leftOver);
     }

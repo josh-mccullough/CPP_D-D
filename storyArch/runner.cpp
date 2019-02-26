@@ -3,6 +3,7 @@
 
 #include "../gameMechanics/rollMechanics.h"
 #include "../characterOptions/Character.h"
+#include "ChapterOne.h"
 
 
 int startGame()
@@ -16,10 +17,7 @@ int startGame()
 
     while(newCharacter->getHealth() != 0)
     {
-        std::cout << "Your health = " << newCharacter->getHealth() << std::endl;
-        newCharacter->loseHealth(50);
-
-        //chapter1
+        chapter1 ();
         //chapter2
         //chapter3 etc.
         //manage all progress through the game from here? 

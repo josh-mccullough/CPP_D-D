@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 
-#include "../gameMechanics/rollMechanics.h"
 #include "../characterOptions/Character.h"
 #include "ChapterOne.h"
 
@@ -17,19 +16,15 @@ int startGame()
 
     while(newCharacter->isAlive())
     {
-        switch (newCharacter.getCurrentChapter())
+        switch (newCharacter->getCurrentChapter())
         {
             case CHAPTER_1:
-                chapter1(c);
+                chapter1(newCharacter);
                 break;
 
-            default;
-            break;
+            default:
+                break;
         }
-
-        //chapter2
-        //chapter3 etc.
-        //manage all progress through the game from here? 
     
     }
 

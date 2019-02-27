@@ -1,27 +1,21 @@
 #include <iostream>
+#include "../characterOptions/Character.h"
 
-int chapter1 () 
+void chapter1 (Character& character) 
 {
-    int userDecision;
-    std::cout << "Welcome to the adventure" << std::endl;
-    std::cout << "You see a door infront of you, would you like to to 1.walk away or 2.open the door?" << std::endl;
-    std::cin >> userDecision;
-    if (userDecision == 1)
+    switch (character.getCurrentStoryPoint())
     {
-        std::cout << "You die now for a laugh" << std::endl;
-        return 0;
+        case C1_P1:
+            chapterOnePoint1(character);
+            break;
+
+        default:
+            break;
+    
     }
-    else
-    {
-        std::cout << "You open the door, you walk inside, a grand hall is infront of you. But where are all the people? You notice a chest on the ground: 1.open chest 2.leave chest alone and continue down the hall?" << std::endl;
-        std::cin >> userDecision;
-        if (userDecision == 1)
-        {
-            return 0;
-        }
-        else
-        {
-            return 0;
-        }
-    }
+}
+
+void chapterOnePoint1(Character& character)
+{
+    std::cout << "we getting somewhere now" << std::endl;
 }

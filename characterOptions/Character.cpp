@@ -14,33 +14,33 @@
     {
         std::cout << "You have gained " << amount << " xp" << std::endl;
 
-        if (currentExperience + amount > experienceToNextLevel)
+        if (mCurrentExperience + amount > mExperienceToNextLevel)
         {
-            levelUp ((currentExperience + amount) - experienceToNextLevel);
+            levelUp ((mCurrentExperience + amount) - mExperienceToNextLevel);
         }
         else
         {
-            currentExperience += amount;
+            mCurrentExperience += amount;
         }
     }
     
     void Character::checkLeftOver (int leftOver)
     {
-       if (leftOver > experienceToNextLevel)
+       if (leftOver > mExperienceToNextLevel)
        {
-            levelUp (leftOver - experienceToNextLevel);
+            levelUp (leftOver - mExperienceToNextLevel);
        }
        else
        {
-            currentExperience = leftOver;
+            mCurrentExperience = leftOver;
        }
     }
 
     void Character::levelUp (int leftOver)
     {
         //Tune this down or up to make experience gain faster or slower
-        experienceToNextLevel = (experienceToNextLevel + (experienceToNextLevel / 100 * 10));
-        level += 1;
-        std::cout << "Congrats " << name << ". You are now level " << level << std::endl;
+        mExperienceToNextLevel = (mExperienceToNextLevel + (mExperienceToNextLevel / 100 * 10));
+        mLevel += 1;
+        std::cout << "Congrats " << mName << ". You are now level " << mLevel << std::endl;
         checkLeftOver (leftOver);
     }

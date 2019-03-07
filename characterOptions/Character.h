@@ -3,46 +3,44 @@
 class Character
 {
     private:
-        int health;
-        std::string name;
+        int mHealth;
+        std::string mName;
 
         // Attributes
-        void displayAttributes(); 
-        int strength;
-        int dexterity;
-        int constitution; 
-        int intelligence;
-        int wisdom;
-        int charisma;
+        int mStrength;
+        int mDexterity;
+        int mConstitution; 
+        int mIntelligence;
+        int mWisdom;
+        int mCharisma;
 
         // skills
-        void displaySkills();
-        int acrobatics;
-        int animalHandling;
-        int arcana;
-        int athletics;
-        int deception;
-        int history;
-        int insight;
-        int intimidation;
-        int investigation;
-        int medicine;
-        int nature;
-        int perception;
-        int performance;
-        int persusion;
-        int religion;
-        int sleightOfHand;
-        int stealth;
-        int survival;
+        int mAcrobatics;
+        int mAnimalHandling;
+        int mArcana;
+        int mAthletics;
+        int mDeception;
+        int mHistory;
+        int mInsight;
+        int mIntimidation;
+        int mInvestigation;
+        int mMedicine;
+        int mNature;
+        int mPerception;
+        int mPerformance;
+        int mPersusion;
+        int mReligion;
+        int mSleightOfHand;
+        int mStealth;
+        int mSurvival;
 
-        std::string race;
-        std::string classG;
-        int armourRating;
+        std::string mRace;
+        std::string mClass;
+        int mArmourRating;
 
-        int currentExperience;
-        int experienceToNextLevel;
-        int level;
+        int mCurrentExperience;
+        int mExperienceToNextLevel;
+        int mLevel;
         
     public:
         enum chapterPoint {CHAPTER_1, CHAPTER_2, CHAPTER_3};
@@ -50,11 +48,14 @@ class Character
         chapterPoint mChapterPoint;
         storyPoint mStoryPoint;
 
-        inline int getLevel (){return level;}
-        inline int getExperience (){return currentExperience;}
-        void addXp (int amount);
-        void checkLeftOver (int leftOver);
-        void levelUp (int leftOver);
+        void displayAttributes(); 
+        void displaySkills();
+
+        inline int getLevel (){return mLevel;}
+        inline int getExperience (){return mCurrentExperience;}
+        void addXp (int mAmount);
+        void checkLeftOver (int mLeftOver);
+        void levelUp (int mLeftOver);
 
         const chapterPoint getChapterPoint () {return mChapterPoint;}
         inline void setChapterPoint (chapterPoint chp) {mChapterPoint = chp;}
@@ -62,22 +63,21 @@ class Character
         const storyPoint getStoryPoint () {return mStoryPoint;}
         inline void setStoryPoint (storyPoint sp) {mStoryPoint = sp;}
 
-        inline bool isAlive () {return health > 0;}
-        inline int getHealth () const {return health;}
-        inline void addHealth (int amount){health += amount;}
-        inline void loseHealth (int amount){health -= amount;}
+        inline bool isAlive () {return mHealth > 0;}
+        inline int getHealth () const {return mHealth;}
+        inline void addHealth (int amount){mHealth += amount;}
+        inline void loseHealth (int amount){mHealth -= amount;}
         
-
         Character (std::string& name, std::string& race, int armourRating):
-                 health(500), name(name),
-                 strength(0), dexterity(0), constitution(0), intelligence(0),
-                 wisdom(0), acrobatics(0), animalHandling(0), arcana(0),
-                 athletics(0), deception(0), history(0), insight(0),
-                 intimidation(0), investigation(0), medicine(0),
-                 nature(0), perception(0), performance(0), persusion(0),
-                 religion(0), sleightOfHand(0), stealth(0), survival(0),
-                 race(race), classG("something"), armourRating(armourRating),
-                 currentExperience(0), experienceToNextLevel(200), level(1),
+                 mHealth (500), mName (name),
+                 mStrength (0), mDexterity (0), mConstitution (0), mIntelligence (0),
+                 mWisdom (0), mAcrobatics (0), mAnimalHandling (0), mArcana (0),
+                 mAthletics (0), mDeception (0), mHistory (0), mInsight (0),
+                 mIntimidation (0), mInvestigation (0), mMedicine (0),
+                 mNature (0), mPerception (0), mPerformance (0), mPersusion (0),
+                 mReligion (0), mSleightOfHand (0), mStealth (0), mSurvival (0),
+                 mRace (race), mClass ("something"), mArmourRating (armourRating),
+                 mCurrentExperience (0), mExperienceToNextLevel (200), mLevel (1),
                  mChapterPoint(CHAPTER_1), mStoryPoint(C1_P1) 
         {}
         

@@ -1,0 +1,49 @@
+"Chapter1":
+{
+    "Point1":
+    {
+        "question": "would you like this?",
+        "responses":
+        [
+            "option_num": 3,
+            "option1":
+            {
+                "resp": "something1",
+                "goto": "point3"
+            },
+            "option2":
+            {
+                "resp": "something2",
+                "goto": "point1"
+            },
+            "option3":
+            {
+                "resp": "something3",
+                "goto": "point2"
+            }
+        ]
+    },
+    "Point2":
+    {
+        "question": "Another one?",
+        "responses":
+        [
+            "option_num": 3,
+            "option1":
+            {
+                "resp": "something1",
+                "goto": "point6"
+            },
+            "option2":
+            {
+                "resp": "something2",
+                "goto": "point9"
+            },
+            "option3":
+            {
+                "resp": "something3",
+                "goto": "point10"
+            }
+        ]
+    }
+}
